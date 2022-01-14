@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="30">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <title>datatable</title>
+</head>
+
+<body >
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(180deg, rgba(82,151,217,1) 19%, rgba(229,241,255,1) 100%)";>
+      
+      <a class="navbar-brand" href="#">AIR QUALITY<br>SENSOR</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><b>HOME</b><span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#"><b>DATA</b></a>
+            
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/history/get"><b>HISTORY</b></a>
+          </li>    
+      </div>
+
+    </nav>
+    
+    <figure class="text-center">
+      <blockquote class="blockquote">
+        <p>DATA SITE : TEST</p>
+      </blockquote>
+    </figure>
+
+    <div class="info-body">
+      <table class="table table-bordered">
+        <thead style="background-color: rgba(116,178,238,1)";>
+          <tr>
+            <th>SITE</th>
+            <th>DATE TIME</th>
+            <th>CHANNEL</th>
+            <th>UNITS</th>
+            <th>RAW VAL.</th>
+            <th>INSTANT.</th>
+            <th>STATUS</th>
+            <th>1 MIN.</th>
+            <th>STATUS</th>
+            <th>5 MIN.</th>
+            <th>STATUS</th>
+            <th>10 MIN.</th>
+            <th>STATUS</th>
+            <th>60 MIN.</th>
+            <th>STATUS</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tbody style="background-color: #e3f2fd";>
+          <% result.forEach(function(sensor, i){ %>
+            <!-- สั่ง loop จากที่เราส่งมาจาก server -->
+            <tr>
+              <td>
+                <%= sensor.Site %> 
+              </td>
+              <td>
+                <%= sensor.Date %>
+              </td>
+              <td>
+                <%= sensor.Channel %>  
+              </td>
+              <td>
+                <%= sensor.Unit %>     
+              </td>
+              <td>
+                <%= sensor.Data1 %>
+              </td>
+              <td>
+                NULL
+              </td>
+              <td>
+                NULL
+              </td>
+              <td>
+                NULL
+              </td>
+              <td>
+                NULL
+              </td>
+              <td>
+                NULL
+              </td>
+              <td>
+                NULL
+              </td>
+              <td>
+                NULL
+              </td>
+              <td>
+                NULL
+              </td>
+              <td>
+                NULL
+              </td>
+              <td>
+                NULL
+              </td>
+            </tr>
+            <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

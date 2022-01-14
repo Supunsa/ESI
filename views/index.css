@@ -1,0 +1,16 @@
+html {
+    width: auto;
+    height: auto;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: auto;
+    max-width: auto;
+    padding: auto;
+  }
+thead {
+    color: black;
+    background-color: rgb(172, 210, 212);
+    vertical-align: middle;
+    height: 50px;
+  }

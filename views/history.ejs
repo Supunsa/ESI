@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <title>datatable</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light"
+      style="background: linear-gradient(180deg, rgba(82,151,217,1) 19%, rgba(229,241,255,1) 100%)" ;>
+      <a class="navbar-brand" href="#">AIR QUALITY<br>SENSOR</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><b>HOME</b><span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/"><b>DATA</b></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/history/get"><b>HISTORY</b></a>
+          </li>
+      </div>
+    </nav>
+
+    <figure class="text-center">
+      <blockquote class="blockquote">
+        <p>SELECT DATE</p>
+      </blockquote>
+    </figure>
+
+    <!-- <form class="text-center" action="/history/post" method="post">
+      <label for="data">START DATE:</label>
+      <input type="date" id="date" name="Startdate" required>
+
+      <label for="appt-time">TIME: </label>
+      <input type="time" id="appt-time" name="Starttime" step="2" required><br>
+
+      <label for="data">END DATE:</label>
+      <input type="date" id="date" name="Enddate" required>
+
+      <label for="appt-time">TIME: </label>
+      <input type="time" id="appt-time" name="Endtime" step="2" required> -->
+
+
+      <form class="text-center" action="/history/post" method="post">
+        <label for="data">START DATE:</label>
+        <input type="datetime-local" id="date" name="Startdate" step="2" required>
+
+        <!-- <label for="appt-time">TIME: </label>
+        <input type="time" id="appt-time" name="Starttime" step="2" required><br> -->
+
+        <label for="data">END DATE:</label>
+        <input type="datetime-local" id="date" name="Enddate" step="2" required>
+
+        <!-- <label for="appt-time">TIME: </label>
+        <input type="time" id="appt-time" name="Endtime" step="2" required> -->
+
+
+        <!-- <label for="data">END DATE:</label>  
+            <input type="date" id="date" name="Enddate" required> -->
+
+        <!-- <label for="data">END DATE:</label>  
+            <input type="date"> -->
+
+        <figure class="text-center">
+          <input type="submit" class="btn btn-success" value="SHOW DATA" />
+        </figure>
+      </form>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+body{
+  margin: 0;
+  padding: 0;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* background: #aabad8 !important; */
+}
+tr {
+  width: 100%;
+  text-align: center;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif
+}
+
+a.nav-link {
+  /* text-decoration: underline 0.15em rgb(255, 255, 255); */
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 300ms, text-underline-offset 300ms;
+}
+
+a.nav-link:hover {
+  text-decoration: underline 0.15em rgb(253, 241, 71);
+  /* text-decoration-color: rgb(253, 241, 71); */
+  /* text-underline-offset: 0.4em; */
+}
