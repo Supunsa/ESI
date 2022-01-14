@@ -6,7 +6,7 @@ const mysql = require('mysql');
 // GET home page.
 router.get('/', function (req, res) {
   var con = mysql.createConnection({
-    host: '127.0.0.1',
+    host: 'localhost',
     user: 'root',
     password: '',
     database: 'database'
