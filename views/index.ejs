@@ -6,11 +6,12 @@
   <meta http-equiv="refresh" content="30">
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js" ></script>
   <title>datatable</title>
 </head>
 
 <body >
-  <div class="container-fluid">
+  <div class="container-fluid" id="test">
     <nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(180deg, rgba(82,151,217,1) 19%, rgba(229,241,255,1) 100%)";>
       
       <a class="navbar-brand" href="#">AIR QUALITY<br>SENSOR</a>
@@ -117,5 +118,24 @@
       </table>
     </div>
   </div>
+
+  <button type="button" onclick="generatePDF()">Click Me!</button>
+
+  <script>
+    function generatePDF() {
+      var doc = new jsPDF();  //create jsPDF object
+      source = window.document.getElementsByTagName("body")[0];
+       doc.fromHTML(source, // page element which you want to print as PDF
+       15,
+       0.5, 
+       {
+         'width': 180  //set width
+       },
+       function(a) 
+        {
+         doc.save("HTML2PDF.pdf"); // save file name as HTML2PDF.pdf
+       });
+     }
+    </script>
 </body>
 </html>
