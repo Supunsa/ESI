@@ -17,6 +17,10 @@
       z-index: 9999 !important;
       opacity: 0.4;
     }
+    .affix-csv {
+      left: 145px;
+      top: 0;
+    }
     .affix:hover {
       opacity: 1;
     }
@@ -65,8 +69,8 @@
       <h2>DATA SITE : TEST</h2>
     </figure>
 
-    <button class="btn btn-primary print" type="button" onclick="document.title = 'Datalog';window.print()" data-spy="affix" data-offset-top="150">Dowmload PDF</button>
-
+    <button class="btn btn-primary print" type="button" onclick="document.title = 'Datalog';window.print()" data-spy="affix" data-offset-top="140">Dowmload PDF</button>
+    <a class="btn btn-primary print affix-csv" data-spy="affix" data-offset-top="125" href='/get/download/<%=start%>/<%=end%>'">Download CSV</a>
     <div class="info-body">
       <table class="table table-striped table-bordered">
         <thead style="background-color: rgba(116,178,238,1)" ;>
@@ -216,8 +220,6 @@
                 <td>
                   <%= data.status16 %>
                 </td>
-                
-                
               </tr>
           <% }) %>
         </tbody>
