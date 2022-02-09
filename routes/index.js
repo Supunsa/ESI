@@ -88,18 +88,16 @@ router.get('/get/:date/:endDate', function (req, res) {
 
   var Startday = req.params.date;
   var Endday = req.params.endDate;
-  // var Starttime = req.params.startTime;
-  // var Endtime = req.params.endTime;
 
   console.log(Startday, Endday);
 
   // console.log(Startday);
-  var day = Startday.replaceAll('-', '/');
-  var Endday = Endday.replaceAll('-', '/');
+  // var day = Startday.replaceAll('-', '/');
+  // var Endday = Endday.replaceAll('-', '/');
 
   con.connect(function (err) { // เชื่อมต่อ Database
     if (err) throw err; // ถ้าเกิด Error ให้โยนค่าที่แจ้งออกมา
-    con.query(`SELECT * FROM datalogs WHERE Date BETWEEN '${day}' AND '${Endday}'`, function (err, result, fields) { // สั่งให้ไปเลือก table datalogs โดยดึงจาก id *** desc ไม่มั่นใจว่าเรียงจากล่าสุด ***
+    con.query(`SELECT * FROM dbo_raws WHERE datetime BETWEEN '${Startday}' AND '${Endday}'`, function (err, result, fields) { // สั่งให้ไปเลือก table datalogs โดยดึงจาก id *** desc ไม่มั่นใจว่าเรียงจากล่าสุด ***
       if (err) throw err; // ถ้าไม่สามารถดึงข้อมูลมาจากที่เลือกได้ แจ้ง Error
       con.end()
       return res.render('getData', { datas: result, start: Startday, end: Endday }); // สั่งให้ไปประมวลผลไฟล์ index.ejs แล้วส่งค่าที่ได้จากการดึงไปด้วย

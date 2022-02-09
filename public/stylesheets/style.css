@@ -1,11 +1,16 @@
 body{
+  width: 100%;
   margin: 0;
   padding: 0;
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
   /* background: #aabad8 !important; */
 }
-tr {
+
+/* table.table  {
   width: 100%;
+} */
+
+tr {
   text-align: center;
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif
 }
