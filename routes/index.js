@@ -1,9 +1,10 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const requestIp = require('request-ip');
-const mysql = require('mysql');
+
+const { getAll, getDate, downloadCSV } = require("../Controllers");
 
 // GET home page.
+<<<<<<< HEAD
 router.get('/', function (req, res) {
   var data = []
   var con = mysql.createConnection({
@@ -106,6 +107,11 @@ router.get('/get/:date/:endDate', function (req, res) {
 
 
 });
+=======
+router.get("/", getAll);
+router.get("/get/:date/:endDate", getDate);
+router.get("/get/download/:date/:endDate", downloadCSV);
+>>>>>>> c57add281f1b83a125cee404518c38d83d767ce6
 
 // router.get('/get/:startTime/:endTime', function (req, res) {
 //   var con = mysql.createConnection({

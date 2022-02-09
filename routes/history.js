@@ -1,14 +1,13 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const requestIp = require('request-ip');
-const mysql = require('mysql');
-const moment = require("moment")
+const { getHistory } = require("../Controllers/history");
 
-
-router.get('/get', (req, res) => {
-    return res.render('history')
+router.get("/get", (req, res) => {
+  return res.render("history");
 });
+router.post("/post", getHistory);
 
+<<<<<<< HEAD
 router.post("/post", async (req, res) => {
     const { Startdate, Enddate} = req.body
     // console.log(Startdate);
@@ -32,3 +31,6 @@ router.post("/post", async (req, res) => {
 })
 
 module.exports = router;
+=======
+module.exports = router;
+>>>>>>> c57add281f1b83a125cee404518c38d83d767ce6
